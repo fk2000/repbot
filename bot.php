@@ -10,9 +10,9 @@ $eb = new EasyBotter();
 //PHPでは先頭に//がある行はコメント扱いなので実行しません。実行したい行の先頭の//を削除してください。
 //=============================
 //$response = $eb->autoFollow();
-//$response = $eb->postRandom("data.txt"); 
+//$response = $eb->postRandom("data.txt");
 //$response = $eb->postRotation("data.txt","おわり");
-//$response = $eb->reply(2,"data.txt","reply_pattern.php");
+$response = $eb->reply(2,"data.txt","reply_pattern.php");
 //$response = $eb->replyTimeline(2,"reply_pattern.php");
 
 
@@ -24,16 +24,16 @@ $eb = new EasyBotter();
 ////cronなどでこのbot.phpを実行するわけですが、動作の指定の仕方はこんな感じです。
 
 //用意したデータをランダムにポストしたい
-$response = $eb->postRandom("データを書き込んだファイル名"); 
+$response = $eb->postRandom("データを書き込んだファイル名");
 
 //用意したデータを順番にポストしたい
-$response = $eb->postRotation("データを書き込んだファイル名"); 
+$response = $eb->postRotation("データを書き込んだファイル名");
 
 //@で話しかけられたときにリプライしたい
-$response = $eb->reply(cronで実行する間隔（単位：分）, "データを書き込んだファイル名", "パターン反応を書き込んだファイル名"); 
+$response = $eb->reply(cronで実行する間隔（単位：分）, "データを書き込んだファイル名", "パターン反応を書き込んだファイル名");
 
 //タイムラインの単語に反応してリプライしたい
-$response = $eb->replyTimeline(cronで実行する間隔（単位：分）,"パターン反応を書き込んだファイル名"); 
+$response = $eb->replyTimeline(cronで実行する間隔（単位：分）,"パターン反応を書き込んだファイル名");
 
 //自動でフォロー返ししたい
 $response = $eb->autoFollow();
@@ -62,16 +62,16 @@ if(date("i") % 15 == 0){
 if(date("G") < 12){
     $response = $eb->postRandom("gozen.txt");
 }else{
-    $response = $eb->postRandom("gogo.txt");    
+    $response = $eb->postRandom("gogo.txt");
 }
 
 //bot.phpを実行したときに、2月14日のみvalentine.txtのデータを、それ以外はdata.txtのデータを使う
 if(date("n") == 2 && date("j") == 14){
     $response = $eb->postRandom("valentine.txt");
 }else{
-    $response = $eb->postRandom("data.txt");    
+    $response = $eb->postRandom("data.txt");
 }
 
 //準備したテキストを順番にポストしていって、準備した中から「めでたしめでたし」が投稿されたらbotの投稿をそこで止める
-$response = $eb->postRotation("data.txt","めでたしめでたし");    
+$response = $eb->postRotation("data.txt","めでたしめでたし");
 */
